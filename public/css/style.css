@@ -474,6 +474,7 @@ figure {
   font-weight: 500;
   margin-bottom: 10px;
   letter-spacing: 5px;
+  color: #000 !important;
 }
 
 #shop-hero .flexslider .slider-text > .slider-text-inner .head-3 {
@@ -489,7 +490,7 @@ figure {
 #shop-hero .flexslider .slider-text > .slider-text-inner .category span {
   font-weight: 100;
   font-size: 20px;
-  color: gray;
+  color: #000 !important;
 }
 
 #shop-hero .flexslider .slider-text > .slider-text-inner .btn {
@@ -678,7 +679,7 @@ figure {
   color: gray;
   text-decoration: line-through;
   font-weight: 300;
-  color: white;
+  color: #ffdd00;
 }
 
 .product-entry .product-img .cart-info h3 {
@@ -722,7 +723,7 @@ figure {
 .product-entry .product-img .tag .sale {
   font-size: 2rem;
   font-weight: bold;
-  color: #d9534f;
+  color: #5bc0de;
 }
 
 .product-entry .product-img .tag .sale::after {
@@ -733,7 +734,7 @@ figure {
   bottom: -1.5rem;
   width: 4rem;
   height: 3rem;
-  border: 1px solid #d9534f;
+  border: 1px solid #5bc0de;
 }
 
 .product-entry .product-img .cart {
@@ -2281,6 +2282,8 @@ input[type=text] {
 .qbstp-header-subscribe .form-group {
   position: relative;
   width: 100%;
+  border: 1px solid black;
+  border-radius: 400px;
 }
 
 @media screen and (max-width: 480px) {
@@ -2327,7 +2330,6 @@ input[type=text] {
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
   background: #000;
-  color: #fff;
   border: none;
   padding: 14px;
 }
@@ -2680,8 +2682,10 @@ input[type=text] {
 .btn {
   margin-right: 4px;
   margin-bottom: 4px;
-  font-size: 16px;
+  height: 100%;
+  font-size: 11px;
   font-weight: 400;
+  background: #ff004c !important;
   border-radius: 30px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -3029,5 +3033,17 @@ input[type=text] {
 
 #navbarSupportedContent > ul > li.active > a {
   color: #fff !important;
+}
+
+.subscribe-text {
+  color: #ff004c !important;
+}
+
+.padding-0 {
+  padding: 0 !important;
+}
+
+.btn-outline {
+  background: transparent !important;
 }
 

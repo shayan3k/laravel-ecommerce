@@ -50,21 +50,21 @@
 
         <nav id='navbar' class="navbar navbar-expand-md navbar-light bg-light d-flex mx-lg-5 mx-md-2 mx-sm-1">
             <a class="navbar-brand" href="#">
-            
+
                 <svg style='height : 100% ;' viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M1 78H59V189V190H60H157V199H1V78ZM61 188V78H94V115V116H95H157V188H61ZM94 76H61V56H94V76ZM96 114V78H157V114H96ZM159 114V77V76H158H96V56H221V114H159ZM159 188V116H222H223V115V56H299V188H159ZM221 1V54H96V1H221Z" fill="#EDDE53" stroke="#0066FF" stroke-width="2"/>
                     </svg>
-                    
-            
-            
-            
+
+
+
+
             </a>
-            
-            
-            
-            
-            
-            <div class="shop-nav d-none d-md-block menu-1 ml-auto" 
+
+
+
+
+
+            <div class="shop-nav d-none d-md-block menu-1 ml-auto"
             id="navbarSupportedContent"
             >
               <ul class="navbar-nav ml-auto shop-navbar-link">
@@ -82,13 +82,13 @@
                   <li><a href="blog.html">Blog</a></li>
                   <li><a href="about.html">About</a></li>
                   <li><a href="contact.html">Contact</a></li>
-                  <li><a href="cart.html"><i class="icon-shopping-cart"></i> 
-                      
+                  <li><a href="cart.html"><i class="icon-shopping-cart"></i>
+
                       Cart
                           <span class="badge badge-pill badge-warning">0</span>
-          
+
                       </a>
-                  </li>                   
+                  </li>
               </ul>
             </div>
         </nav>
@@ -99,7 +99,7 @@
 
 
 
-		
+
 		<aside id="shop-hero">
 			<div class="flexslider">
 				<ul class="slides">
@@ -215,13 +215,13 @@
 						<div class="product-entry">
 							<div class="product-img" style="background-image: url(images/item-5.jpg);">
 								<p class="tag"><span class="sale">Sale</span></p>
-                    
+
                                 <div class="cart-info">
                                     <p class="price"><span>$300.00</span></p>
                                     <h3><a class='name' href="shop.html">Floral Dress</a></h3>
                                 </div>
                                 <div class='mask'></div>
-                                
+
                                 <div class="cart">
 									<p>
 										<span class="addtocart"><a href="cart.html"><i
@@ -232,21 +232,21 @@
 									</p>
                                 </div>
 							</div>
-							
+
 						</div>
 					</div>
 					<div class="col-md-3 text-center">
 						<div class="product-entry">
 							<div class="product-img" style="background-image: url(images/item-6.jpg);">
 								<p class="tag"><span class="new">New</span></p>
-                                
-                                
+
+
                                 <div class="cart-info">
                                     <p class="price"><span>$300.00</span></p>
                                     <h3><a class='name' href="shop.html">Floral Dress</a></h3>
                                 </div>
                                 <div class='mask'></div>
-                                
+
                                 <div class="cart">
 									<p>
 										<span class="addtocart"><a href="cart.html"><i
@@ -258,20 +258,20 @@
                                 </div>
 
 							</div>
-							
+
 						</div>
 					</div>
 					<div class="col-md-3 text-center">
 						<div class="product-entry">
 							<div class="product-img" style="background-image: url(images/item-7.jpg);">
 								<p class="tag"><span class="new">New</span></p>
-                                
+
                                 <div class="cart-info">
                                     <p class="price"><span>$300.00</span></p>
                                     <h3><a class='name' href="shop.html">Floral Dress</a></h3>
                                 </div>
                                 <div class='mask'></div>
-                                
+
                                 <div class="cart">
 									<p>
 										<span class="addtocart"><a href="cart.html"><i
@@ -283,7 +283,7 @@
                                 </div>
 
 							</div>
-							
+
 						</div>
 					</div>
 					<div class="col-md-3 text-center">
@@ -296,7 +296,7 @@
                                 </div>
                                 <div class='mask'></div>
 
-                                
+
                                 <div class="cart">
 									<p>
 										<span class="addtocart"><a href="cart.html"><i
@@ -309,7 +309,7 @@
                                 <div class='mask'></div>
 
 							</div>
-							
+
 						</div>
 					</div>
 				</div>
@@ -376,7 +376,7 @@
 									</p>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
 					<div class="col-md-3 text-center">
@@ -398,7 +398,7 @@
 									</p>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
 					<div class="col-md-3 text-center">
@@ -420,7 +420,7 @@
 									</p>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
 					<div class="col-md-3 text-center">
@@ -463,7 +463,7 @@
 									</p>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
 					<div class="col-md-3 text-center">
@@ -485,7 +485,7 @@
 									</p>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
 					<div class="col-md-3 text-center">
@@ -507,7 +507,7 @@
 									</p>
 								</div>
 							</div>
-							
+
 						</div>
 					</div>
 					<div class="col-md-3 text-center">
@@ -645,34 +645,7 @@
 			</div>
 		</div>
 
-		<div id="shop-subscribe">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row">
 
-
-
-
-
-						<div class="col-md-5 d-flex justify-content-center align-items-center">
-							<h2 class='text-center'><i class="icon-paperplane"></i>Sign Up for a Newsletter</h2>
-						</div>
-						<div class="col-md-5 d-flex justify-content-center align-items-center">
-							<form class="col-12 col form-inline qbstp-header-subscribe">					<div class="form-group">
-											<input type="text" class="form-control" id="email"
-												placeholder="Enter your email">
-											<button type="submit" class="btn btn-primary">Subscribe</button>
-										</div>
-							</form>
-                        </div>
-                        
-
-
-
-
-				</div>
-			</div>
-		</div>
 
 		<footer id="shop-footer" role="contentinfo">
 			<div class="container">
@@ -689,6 +662,17 @@
 								<li><a href="#"><i class="icon-dribbble"></i></a></li>
 							</ul>
 						</p>
+						<div class="col-12 d-flex justify-content-center align-items-center">
+							<h2 class='text-center subscribe-text'><i class="icon-paperplane"></i>Get The News First</h2>
+						</div>
+						<div class="col-12 d-flex justify-content-center align-items-center padding-0">
+							<form class="col-12 col form-inline qbstp-header-subscribe padding-0">					<div class="form-group">
+											<input type="text" class="form-control" id="email"
+												placeholder="Enter your email">
+											<button type="submit" class="btn btn-primary">Subscribe</button>
+										</div>
+							</form>
+                        </div>
 					</div>
 					<div class="col-md-2 shop-widget">
 						<h4>Customer Care</h4>

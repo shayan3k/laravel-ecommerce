@@ -597,6 +597,8 @@ figure {
                     font-weight: 500;
                     margin-bottom: 10px;
                     letter-spacing: 5px;
+                    color: $brand-black !important;
+
                 }
 
                 .head-3 {
@@ -611,7 +613,7 @@ figure {
                     span {
                         font-weight: 100;
                         font-size: 20px;
-                        color: lighten($brand-black, 50%);
+                        color: $brand-black !important;
                     }
                 }
 
@@ -801,7 +803,7 @@ figure {
                     color: lighten($brand-black, 50%);
                     text-decoration: line-through;
                     font-weight: 300;
-                    color: white;
+                    color: $brand-yellow;
 
                 }
             }
@@ -850,7 +852,7 @@ figure {
             .sale {
                 font-size: 2rem;
                 font-weight: bold;
-                color: $brand-danger;
+                color: $brand-info;
 
                 &::after {
                     content: "";
@@ -860,7 +862,7 @@ figure {
                     bottom: -1.5rem;
                     width: 4rem;
                     height: 3rem;
-                    border: 1px solid $brand-danger;
+                    border: 1px solid $brand-info;
                 }
             }
         }
@@ -2413,6 +2415,8 @@ input[type="text"] {
     .form-group {
         position: relative;
         width: 100%;
+        border: 1px solid black;
+        border-radius: 400px;
 
         @media screen and (max-width: $screen-xs) {
             width: 100%;
@@ -2457,7 +2461,6 @@ input[type="text"] {
         border-top-left-radius: 0px !important;
         border-bottom-left-radius: 0px !important;
         background: $brand-black;
-        color: $brand-white;
         border: none;
         padding: 14px;
     }
@@ -2814,8 +2817,10 @@ input[type="text"] {
 .btn {
     margin-right: 4px;
     margin-bottom: 4px;
-    font-size: 16px;
+    height: 100%;
+    font-size: 11px;
     font-weight: 400;
+    background: $brand-primary !important;
     @include border-radius(30px);
     @include transition(0.5s);
     padding: 8px 20px;
@@ -3179,4 +3184,17 @@ input[type="text"] {
 
 #navbarSupportedContent>ul>li.active>a {
     color: $brand-white !important;
+}
+
+
+.subscribe-text {
+    color: $brand-primary !important;
+}
+
+.padding-0 {
+    padding: 0 !important;
+}
+
+.btn-outline {
+    background: transparent !important;
 }
