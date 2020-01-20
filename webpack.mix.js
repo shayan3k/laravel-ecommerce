@@ -11,11 +11,13 @@ const mix = require("laravel-mix");
  |
  */
 
-mix.sass("resources/sass/style.scss", "public/css")
+mix.sass("resources/sass/style.scss", "public/sass")
 
     // .copy("resources/css", "public/css")
+    // .copy("resources/sass/style.css", "public/css/style.css")
     // .copy("resources/fonts", "public/fonts")
     // .copy("resources/images", "public/images")
+    // .copy("resources/js", "public/js")
     .js("resources/js/main.js", "public/js")
     .browserSync({
         proxy: "http://127.0.0.1:8000",

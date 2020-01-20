@@ -370,6 +370,7 @@ figure {
                     color: $brand-primary !important;
                     position: relative;
 
+
                     &:after {
                         opacity: 1;
                         -webkit-transform: translate3d(0, 0, 0);
@@ -582,7 +583,7 @@ figure {
 
                     span,
                     a {
-                        color: $brand-text-white !important;
+                        color: $brand-text-white;
                     }
                 }
 
@@ -1427,7 +1428,7 @@ figure {
                 width: 48%;
                 display: inline-block;
 
-                &:first-child {}
+
 
                 &:last-child {
                     font-weight: 500;
@@ -1662,9 +1663,21 @@ figure {
         width: 100%;
         display: block;
         margin-bottom: 20px;
-        border: 1px solid lighten($brand-black, 90%) !important;
         padding: 1.5em;
-        border: 1px solid red;
+        position: relative;
+
+        &:after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            border: 2px solid $brand-primary;
+
+
+        }
 
         h2 {
             text-transform: uppercase;
@@ -2651,6 +2664,103 @@ input[type="text"] {
     }
 }
 
+
+
+
+////////// Pagination
+[data-pagination],
+[data-pagination] *,
+[data-pagination] *:before,
+[data-pagination] *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-kerning: auto;
+}
+
+[data-pagination] {
+    font-size: 8pt;
+    line-height: 1;
+    font-weight: 400;
+    font-family: 'Open Sans', 'Source Sans Pro', Roboto, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', 'Myriad Pro', 'Segoe UI', Myriad, Helvetica, 'Lucida Grande', 'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    margin: 1em auto;
+    text-align: center;
+    transition: font-size .2s ease-in-out;
+}
+
+[data-pagination] ul {
+    list-style-type: none;
+    display: inline;
+    font-size: 100%;
+    margin: 0;
+    padding: .5em;
+}
+
+[data-pagination] ul li {
+    display: inline-block;
+    font-size: 100%;
+    width: auto;
+    border-radius: 3px;
+}
+
+[data-pagination]>a {
+    font-size: 140%;
+}
+
+[data-pagination] a {
+    color: #777;
+    font-size: 100%;
+    padding: .5em;
+}
+
+[data-pagination] a:focus,
+[data-pagination] a:hover {
+    color: #f60;
+}
+
+[data-pagination] li.current {
+    background: rgba(0, 0, 0, .1)
+}
+
+/* Disabled & Hidden Styles */
+[data-pagination] .disabled,
+[data-pagination] [hidden],
+[data-pagination] [disabled] {
+    opacity: .5;
+    pointer-events: none;
+}
+
+@media (min-width: 350px) {
+    [data-pagination] {
+        font-size: 10pt;
+    }
+}
+
+@media (min-width: 500px) {
+    [data-pagination] {
+        font-size: 12pt;
+    }
+}
+
+@media (min-width: 700px) {
+    [data-pagination] {
+        font-size: 14pt;
+    }
+}
+
+@media (min-width: 900px) {
+    [data-pagination] {
+        font-size: 16pt;
+    }
+}
+
+
+
+
 // Burger Menu
 .shop-nav-toggle {
     width: 25px;
@@ -3163,8 +3273,9 @@ input[type="text"] {
 }
 
 
-.active {
+.owl-stage-outer.owl-height>div>div.owl-item.active {
     background: $brand-primary !important;
+    color: $brand-white;
 
 }
 
@@ -3181,12 +3292,6 @@ input[type="text"] {
     }
 }
 
-
-#navbarSupportedContent>ul>li.active>a {
-    color: $brand-white !important;
-}
-
-
 .subscribe-text {
     color: $brand-primary !important;
 }
@@ -3197,4 +3302,76 @@ input[type="text"] {
 
 .btn-outline {
     background: transparent !important;
+}
+
+
+#page>div:nth-child(3)>div>div.row.row-pb-lg.d-flex.justify-content-center.align-items-center>div>div>div>div.col-md-7>div {
+
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+}
+
+#page>div:nth-child(3)>div>div.row.row-pb-lg.d-flex.justify-content-center.align-items-center>div>div>div>div.col-md-7>div>div.input-group {
+    width: 120px;
+}
+
+#quantity {
+    width: 40px;
+}
+
+
+.btn-ordernow {
+    display: block;
+    font-size: 1.3rem;
+    width: 50%;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    text-align: center;
+    border: 3px solid $brand-primary;
+    cursor: pointer;
+    transition: all .3;
+
+    &:hover {
+        padding: 4rem 0;
+        border-radius: 10px;
+    }
+}
+
+.shop-form,
+.cart-detail {
+    background: transparent !important;
+    position: relative;
+    transition: all .3;
+
+    &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 4px solid $brand-primary;
+    }
+}
+
+
+a.btn-custom {
+    display: block;
+    font-size: 1rem;
+    width: 50%;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    text-align: center;
+    color: $brand-primary !important;
+    border: 3px solid $brand-primary;
+    cursor: pointer;
+    transition: all .3;
+
+    &:hover {
+        padding: 4rem 1rem;
+        border-radius: 10px;
+    }
 }
