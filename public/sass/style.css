@@ -3202,7 +3202,7 @@ input[type=text] {
   border: 4px solid #ff004c;
 }
 
-a.btn-custom {
+.btn-custom {
   display: block;
   font-size: 1rem;
   width: 50%;
@@ -3216,8 +3216,68 @@ a.btn-custom {
   transition: all 0.3;
 }
 
-a.btn-custom:hover {
+.btn-custom:hover {
   padding: 4rem 1rem;
   border-radius: 10px;
+}
+
+.btn-custom-sm {
+  display: block;
+  font-size: 0.7rem;
+  width: 100%;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  text-align: center;
+  color: #ff004c !important;
+  border: 3px solid #ff004c;
+  cursor: pointer;
+  -webkit-transition: all 0.3;
+  transition: all 0.3;
+}
+
+.btn-custom-sm:hover {
+  padding: 3rem 1.5rem;
+  border-radius: 10px;
+}
+
+.login > .card-header {
+  background: transparent !important;
+}
+
+.btn-login {
+  border: 2px solid #ff004c;
+  background: transparent;
+  padding: 0.8rem 1.3rem;
+  color: #ff004c;
+  cursor: pointer;
+}
+
+.btn-login:focus {
+  outline: 0;
+}
+
+.btn-link {
+  display: inline-block;
+  background: transparent;
+  color: #ff004c;
+  outline: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  cursor: pointer;
+}
+
+.btn-link:focus {
+  outline: 0;
+}
+
+.loginInput {
+  background: #a0fdfd34 !important;
+  font-size: 1.1rem !important;
+  color: #ff004c !important;
+  font-weight: bold !important;
+}
+
+.loginInput:focus {
+  border: 1px solid #ff004c !important;
 }
 

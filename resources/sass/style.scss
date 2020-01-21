@@ -7,7 +7,7 @@ $border-radius-base: 4px !default;
 $padding-base-vertical: 14px !default;
 
 $brand-primary: #ff004c !default;
-$brand-secondary: #3edddd !default;
+$brand-secondary: #a0fdfd34 !default;
 $brand-yellow: #ffdd00 !default;
 $brand-footer-color: #2c2e3e;
 
@@ -3358,7 +3358,7 @@ input[type="text"] {
 }
 
 
-a.btn-custom {
+.btn-custom {
     display: block;
     font-size: 1rem;
     width: 50%;
@@ -3373,5 +3373,69 @@ a.btn-custom {
     &:hover {
         padding: 4rem 1rem;
         border-radius: 10px;
+    }
+}
+
+
+
+.btn-custom-sm {
+    display: block;
+    font-size: .7rem;
+    width: 100%;
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    text-align: center;
+    color: $brand-primary !important;
+    border: 3px solid $brand-primary;
+    cursor: pointer;
+    transition: all .3;
+
+    &:hover {
+        padding: 3rem 1.5rem;
+        border-radius: 10px;
+    }
+}
+
+
+.login > .card-header {
+    background: transparent !important;
+}
+
+
+.btn-login{
+
+    border : 2px solid $brand-primary;
+    background : transparent;
+    padding : .8rem 1.3rem;
+    color : $brand-primary;
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.btn-link{
+    display : inline-block;
+    background : transparent;
+    color : $brand-primary;
+    outline: 0 !important;
+    border : 0 !important;
+    box-shadow: none !important;
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.loginInput {
+    background: $brand-secondary !important;
+    font-size : 1.1rem !important;
+    color : $brand-primary !important;
+    font-weight : bold !important;
+
+    &:focus {
+        border : 1px solid $brand-primary !important;
     }
 }

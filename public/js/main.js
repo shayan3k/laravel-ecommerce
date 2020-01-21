@@ -390,6 +390,26 @@
     });
   };
 
+  var brandEffect = function brandEffect() {
+    if (document.querySelector(".navbar-brand > img")) {
+      var brand = document.querySelector(".navbar-brand > img");
+      var Y = brand.clientHeight,
+          X = brand.clientWidth;
+      var currentX, currentY;
+      brand.addEventListener("mousemove", function (e) {
+        currentX = e.offsetX;
+        currentY = e.offsetY;
+        var transformValueX = -10 + currentX / (X / 2) * 10;
+        var transformValueY = -10 + currentY / (Y / 2) * 10;
+        console.log(transformValueX, transformValueY);
+        brand.style.cssText = "\n                                -moz-transform: skew(".concat(transformValueX, "deg, ").concat(transformValueY, "deg);\n                                -webkit-transform: skew(").concat(transformValueX, "deg, ").concat(transformValueY, "deg);\n                                -o-transform: skew(").concat(transformValueX, "deg, ").concat(transformValueY, "deg);\n                                -ms-transform: skew(").concat(transformValueX, "deg, ").concat(transformValueY, "deg);\n                                transform: skew(").concat(transformValueX, "deg, ").concat(transformValueY, "deg);\n                 ");
+      });
+      brand.addEventListener("mouseleave", function () {
+        brand.style.cssText = "\n                                -moz-transform: skew(0deg, 0deg);\n                                -webkit-transform: skew(0deg, 0deg);\n                                -o-transform: skew(0deg, 0deg);\n                                -ms-transform: skew(0deg, 0deg);\n                                transform: skew(0deg, 0deg);\n                 ";
+      });
+    }
+  };
+
   $(function () {
     mobileMenuOutsideClick();
     offcanvasMenu();
@@ -403,6 +423,8 @@
     parallax();
     datePicker();
     cartHoverAnimationInit(); // blogHoverAnimationInit();
+
+    brandEffect();
   });
 })();
 

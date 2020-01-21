@@ -1,10 +1,6 @@
-<nav id='navbar' class="navbar navbar-expand-md navbar-light bg-light d-flex mx-lg-5 mx-md-2 mx-sm-1">
-    <a class="navbar-brand" href="#">
-        <svg style='height : 100% ;' viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M1 78H59V189V190H60H157V199H1V78ZM61 188V78H94V115V116H95H157V188H61ZM94 76H61V56H94V76ZM96 114V78H157V114H96ZM159 114V77V76H158H96V56H221V114H159ZM159 188V116H222H223V115V56H299V188H159ZM221 1V54H96V1H221Z"
-                fill="#EDDE53" stroke="#0066FF" stroke-width="2" />
-        </svg>
+<nav id='navbar' class="navbar navbar-expand-md navbar-light bg-transparent d-flex mx-lg-5 mx-md-2 mx-sm-1">
+    <a class="navbar-brand d-flex justify-content-center align-items-center" href="{{ route('index') }}">
+        <img class='px-3' src="./images/logo.png" width='40%' alt="logo">
     </a>
 
 

@@ -1,42 +1,20 @@
 @include('partials.header')
 
 <body>
+    <div class="shop-loader"></div>
 
     <div id="page">
-
-
         @include('partials.navbar');
-
-
-        @include('partials.hero')
-
-
-        @include('partials.featuredProduct')
-
-
-        @include('partials.newArrival')
-
-
-        @include('partials.intro')
-
-        @include('partials.products')
-
-        @include('partials.testimony')
-
-
-        @include('partials.blog')
-
-
-
+        @section('content')
+        @show
         @include('partials.footer')
     </div>
 
-    @include('partials.goToTop')
-
+    @section('goToTop')
+    @show
     @include('partials.scripts')
-
-
-
+    @section('custom-scripts')
+    @show
 
 </body>
 
