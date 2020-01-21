@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 
-@section('contents')
+@section('content')
 
 @include('partials.hero')
 @include('partials.featuredProduct')

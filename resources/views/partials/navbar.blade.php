@@ -17,16 +17,34 @@
                     <li><a href="add-to-wishlist.html">Wishlist</a></li>
                 </ul>
             </li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="cart.html"><i class="icon-shopping-cart"></i>
+            <li><a href="{{ route('blog') }}">Blog</a></li>
+            <li><a href="{{ route('about') }}">About</a></li>
+            <li><a href="{{ route('contact') }}">Contact</a></li>
 
+            @auth
+            <li>
+                <a href="{{ route('cart') }}"><i class="icon-shopping-cart"></i>
                     Cart
-                    <span class="badge badge-pill badge-warning">0</span>
-
+                    <span class="badge badge-pill badge-warning text-white">0</span>
                 </a>
             </li>
+            <li>
+
+                <form action="{{ route('logout') }}" method="post">
+                    @csrf
+                    <button type="submit" class='btn-logout-form' style='color : #379500;'>Logout</button>
+                </form>
+
+            </li>
+
+            @else
+            <li><a href="{{ route('register') }}" class='ml-5 btn-logout-a' style='color : #379500;'>Register</a></li>
+            <li><a href="{{ route('login') }}" class='btn-logout-a' style='color : #379500;'>Login</a></li>
+            @endauth
+
+
+
+
         </ul>
     </div>
 </nav>

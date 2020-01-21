@@ -149,8 +149,8 @@ figure {
   font-size: 15px;
   padding: 30px 12px;
   color: rgba(0, 0, 0, 0.7);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .shop-nav ul li a:hover {
@@ -3270,14 +3270,42 @@ input[type=text] {
   outline: 0;
 }
 
-.loginInput {
-  background: #a0fdfd34 !important;
-  font-size: 1.1rem !important;
-  color: #ff004c !important;
-  font-weight: bold !important;
+.btn-logout-form {
+  margin: 0 !important;
+  padding: 0 !important;
+  padding: 1rem !important;
+  border-bottom: 1px solid #ff004c;
+  margin-left: 5px;
+  position: relative;
+  font-size: 15px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background: transparent !important;
+  outline: 0 !important;
+  border: none !important;
+  border-bottom: 1px solid #5cb85c !important;
+  margin: 0 0 0 5px !important;
+  cursor: pointer;
 }
 
-.loginInput:focus {
-  border: 1px solid #ff004c !important;
+.btn-logout-form:hover {
+  border: 2px solid #5cb85c !important;
+}
+
+.btn-logout-a {
+  border-bottom: 1px solid #5cb85c !important;
+}
+
+.btn-logout-a:hover {
+  border: 2px solid #5cb85c !important;
+}
+
+#navbarSupportedContent > ul > li {
+  display: -webkit-box !important;
+  display: flex !important;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
 }
 

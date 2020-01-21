@@ -11,12 +11,52 @@
 |
 */
 
+use App\Product;
+use Darryldecode\Cart\Cart;
+use Illuminate\Support\Facades\Auth;
+
+Route::get('/test', function () {
+
+
+    $Product = Product::find(2); // assuming you have a Product model with id, name, description & price
+    $rowId = 2; // generate a unique() row ID
+    $userID = Auth::id(); // the user ID to bind the cart contents
+
+    // add the product to cart
+    // \Cart::session($userID)->add(array(
+    //     'id' => $rowId,
+    //     'name' => $Product->name,
+    //     'price' => $Product->price,
+    //     'quantity' => 4,
+    //     'attributes' => array(),
+    //     'associatedModel' => $Product
+    // ));
+
+    // view the cart items
+    $items = \Cart::getContent();
+    var_dump($items);
+    dd();
+});
+
+
+
 Route::get('/', function () {
     return redirect()->route('index');
 });
 
 Route::get('/index', function () {
-    return view('index');
+
+
+    $newArrival = Product::where('active', 1)
+        ->orderBy('id', 'desc')
+        ->take(9)
+        ->get();
+
+    var_dump($newArrival);
+    dd();
+
+
+    return view('index')->with(['newArrival' => $newArrival]);
 })->name('index');
 
 Route::get('/shop', function () {
@@ -27,18 +67,6 @@ Route::get('/product-detail', function () {
     return view('product-detail');
 })->name('product-detail');
 
-Route::get('/order-complete', function () {
-    return view('order-complete');
-})->name('order-complete');
-
-Route::get('/checkout', function () {
-    return view('checkout');
-})->name('checkout');
-
-Route::get('/cart', function () {
-    return view('cart');
-})->name('cart');
-
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
@@ -47,13 +75,30 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/add-to-wishlist', function () {
-    return view('add-to-wishlist');
-})->name('add-to-wishlist');
-
 Route::get('/blog', function () {
     return view('blog');
 })->name('blog');
+
+
+Route::group(['middleware' => ['auth']], function () {
+
+    Route::get('/order-complete', function () {
+        return view('order-complete');
+    })->name('order-complete');
+
+    Route::get('/checkout', function () {
+        return view('checkout');
+    })->name('checkout');
+
+    Route::get('/cart', function () {
+        return view('cart');
+    })->name('cart');
+
+    Route::get('/add-to-wishlist', function () {
+        return view('add-to-wishlist');
+    })->name('add-to-wishlist');
+});
+
 
 
 // Authentication Routes...

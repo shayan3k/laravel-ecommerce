@@ -11,6 +11,8 @@ $brand-secondary: #a0fdfd34 !default;
 $brand-yellow: #ffdd00 !default;
 $brand-footer-color: #2c2e3e;
 
+$brand-sucess:#379500 !important;
+
 $brand-white: #fff;
 $brand-black: #000;
 $brand-darker: #444;
@@ -269,7 +271,7 @@ figure {
                 padding: 30px 12px;
                 color: rgba(0, 0, 0, 0.7);
 
-                @include transition(0.5s);
+                @include transition(0.3s);
 
                 &:hover {
                     padding: 2rem;
@@ -3397,30 +3399,31 @@ input[type="text"] {
 }
 
 
-.login > .card-header {
+.login>.card-header {
     background: transparent !important;
 }
 
 
-.btn-login{
+.btn-login {
 
-    border : 2px solid $brand-primary;
-    background : transparent;
-    padding : .8rem 1.3rem;
-    color : $brand-primary;
+    border: 2px solid $brand-primary;
+    background: transparent;
+    padding: .8rem 1.3rem;
+    color: $brand-primary;
     cursor: pointer;
 
     &:focus {
         outline: 0;
+
     }
 }
 
-.btn-link{
-    display : inline-block;
-    background : transparent;
-    color : $brand-primary;
+.btn-link {
+    display: inline-block;
+    background: transparent;
+    color: $brand-primary;
     outline: 0 !important;
-    border : 0 !important;
+    border: 0 !important;
     box-shadow: none !important;
     cursor: pointer;
 
@@ -3429,13 +3432,49 @@ input[type="text"] {
     }
 }
 
-.loginInput {
-    background: $brand-secondary !important;
-    font-size : 1.1rem !important;
-    color : $brand-primary !important;
-    font-weight : bold !important;
 
-    &:focus {
-        border : 1px solid $brand-primary !important;
+
+
+.btn-logout-form {
+    margin: 0 !important;
+    padding: 0 !important;
+    padding: 1rem !important;
+    border-bottom: 1px solid $brand-primary;
+    margin-left: 5px;
+    position: relative;
+    font-size: 15px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    background: transparent !important;
+    outline: 0 !important;
+    border: none !important;
+    border-bottom: 1px solid $brand-success !important;
+    margin: 0 0 0 5px !important;
+    cursor: pointer;
+
+    &:hover {
+        border: 2px solid $brand-success !important;
     }
+
+
+}
+
+
+
+
+.btn-logout-a {
+    border-bottom: 1px solid $brand-success !important;
+
+    &:hover {
+        border: 2px solid $brand-success !important;
+    }
+
+
+}
+
+
+#navbarSupportedContent>ul>li {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }
