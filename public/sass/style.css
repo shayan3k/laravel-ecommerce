@@ -2533,94 +2533,92 @@ input[type=text] {
   outline: none;
 }
 
-[data-pagination],
-[data-pagination] *,
-[data-pagination] *:before,
-[data-pagination] *:after {
-  box-sizing: border-box;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-kerning: auto;
-          font-kerning: auto;
+.pagination-container > nav,
+.pagination-container > nav *,
+.pagination-container > nav *:before,
+.pagination-container > nav *:after {
+  box-sizing: border-box !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  -webkit-font-kerning: auto !important;
+          font-kerning: auto !important;
 }
 
-[data-pagination] {
-  font-size: 8pt;
-  line-height: 1;
-  font-weight: 400;
-  font-family: "Open Sans", "Source Sans Pro", Roboto, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Myriad Pro", "Segoe UI", Myriad, Helvetica, "Lucida Grande", "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, Arial, sans-serif;
-  -webkit-text-size-adjust: 100%;
-  margin: 1em auto;
-  text-align: center;
-  -webkit-transition: font-size 0.2s ease-in-out;
-  transition: font-size 0.2s ease-in-out;
+.pagination-container > nav {
+  font-size: 8pt !important;
+  line-height: 1 !important;
+  font-weight: 400 !important;
+  font-family: "Open Sans", "Source Sans Pro", Roboto, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Myriad Pro", "Segoe UI", Myriad, Helvetica, "Lucida Grande", "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, Arial, sans-serif !important;
+  -webkit-text-size-adjust: 100% !important;
+  margin: 1em auto !important;
+  text-align: center !important;
+  -webkit-transition: font-size 0.2s ease-in-out !important;
+  transition: font-size 0.2s ease-in-out !important;
 }
 
-[data-pagination] ul {
-  list-style-type: none;
-  display: inline;
-  font-size: 100%;
-  margin: 0;
-  padding: 0.5em;
+.pagination {
+  list-style-type: none !important;
+  display: inline !important;
+  font-size: 100% !important;
+  margin: 0 !important;
+  padding: 0.5em !important;
 }
 
-[data-pagination] ul li {
-  display: inline-block;
-  font-size: 100%;
-  width: auto;
-  border-radius: 3px;
+.page-item {
+  display: inline-block !important;
+  font-size: 100% !important;
+  width: auto !important;
+  border-radius: 5px !important;
 }
 
-[data-pagination] > a {
-  font-size: 140%;
+.page-link {
+  color: #777 !important;
+  font-size: 100% !important;
+  padding: 0.5em !important;
 }
 
-[data-pagination] a {
-  color: #777;
-  font-size: 100%;
-  padding: 0.5em;
+.page-item:focus,
+.page-item:hover {
+  color: #f60 !important;
 }
 
-[data-pagination] a:focus,
-[data-pagination] a:hover {
-  color: #f60;
-}
-
-[data-pagination] li.current {
-  background: rgba(0, 0, 0, 0.1);
+.page-item.active > span {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid #ff004c !important;
+  color: #ff004c !important;
 }
 
 /* Disabled & Hidden Styles */
 
-[data-pagination] .disabled,
-[data-pagination] [hidden],
-[data-pagination] [disabled] {
-  opacity: 0.5;
-  pointer-events: none;
+.pagination-container > nav .disabled,
+.pagination-container > nav [hidden],
+.pagination-container > nav [disabled] {
+  opacity: 0.5 !important;
+  pointer-events: none !important;
 }
 
 @media (min-width: 350px) {
-  [data-pagination] {
-    font-size: 10pt;
+  .pagination-container > nav {
+    font-size: 10pt !important;
   }
 }
 
 @media (min-width: 500px) {
-  [data-pagination] {
-    font-size: 12pt;
+  .pagination-container > nav {
+    font-size: 12pt !important;
   }
 }
 
 @media (min-width: 700px) {
-  [data-pagination] {
-    font-size: 14pt;
+  .pagination-container > nav {
+    font-size: 14pt !important;
   }
 }
 
 @media (min-width: 900px) {
-  [data-pagination] {
-    font-size: 16pt;
+  .pagination-container > nav {
+    font-size: 16pt !important;
   }
 }
 
@@ -2736,47 +2734,6 @@ input[type=text] {
     display: -webkit-box;
     display: flex;
   }
-}
-
-.pagination li {
-  margin: 2px;
-}
-
-.pagination li a {
-  color: #000;
-  background: #fff;
-  border-radius: 0;
-  margin: 2px;
-}
-
-.pagination li a:first-child {
-  border-radius: 2px;
-}
-
-.pagination li a:hover,
-.pagination li a:focus {
-  background: #ff004c;
-  color: #fff;
-  border: 1px solid #ff004c;
-}
-
-@media screen and (max-width: 768px) {
-  .pagination li a {
-    padding: 7px 15px;
-  }
-}
-
-.pagination li.active a {
-  border: 1px solid #ff004c;
-  background: #ff004c;
-  color: #000;
-}
-
-.pagination li.active a:hover,
-.pagination li.active a:focus {
-  background: #ff004c;
-  color: #000;
-  border: 1px solid #ff004c;
 }
 
 .btn {

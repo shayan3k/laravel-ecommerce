@@ -15,7 +15,7 @@
         use App\Product;
         use App\User;
         use Illuminate\Support\Facades\Auth;
-
+        use Illuminate\Support\Facades\DB;
 
         Route::get('/test', function () {
 
@@ -46,13 +46,7 @@
             $user->products()->attach($product);
         });
 
-
-
         Route::get('/', function () {
-            return redirect()->route('index');
-        });
-
-        Route::get('/index', function () {
 
             $newArrival = Product::where('active', 1)
                 ->orderBy('id', 'desc')
@@ -73,7 +67,9 @@
         })->name('index');
 
         Route::get('/shop', function () {
-            return view('shop');
+
+            $allProducts = DB::table('products')->orderBy('created_at', 'desc')->paginate(15);
+            return view('shop', ['allProducts' => $allProducts]);
         })->name('shop');
 
         Route::get('/product-detail', function () {
