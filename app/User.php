@@ -39,4 +39,9 @@ class User extends Authenticatable
     {
         return $this->morphMany('App\Post', 'postable');
     }
+
+    public function products()
+    {
+        return $this->morphToMany('App\Product', 'productable');
+    }
 }

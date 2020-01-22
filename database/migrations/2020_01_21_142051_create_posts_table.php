@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->string('thumbnail');
             $table->boolean('active');
+            $table->string('author_name');
             $table->string('postable_id');
             $table->string('postable_type');
             $table->timestamps();
