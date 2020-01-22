@@ -8,10 +8,14 @@
             </div>
         </div>
         <div class="row">
+
+            @foreach ($latestPosts as $item)
             <div class="col-md-4">
                 <article class="article-entry">
-                    <a href="blog.html" class="blog-img" style="background-image: url(images/blog-1.jpg);">
-                        <p class="meta"><span class="day">02</span><span class="month">Mar</span></p>
+                    <a href="blog.html" class="blog-img" style="background-image: url(images/{{ $item->thumbnail}});">
+                        <p class="meta"><span class="day">{{ $item->created_at->format('d') }}
+                            </span><span class="month">{{ $item->created_at->format('M') }}
+                            </span></p>
                         <div class="mask d-flex justify-content-center align-items-center">
                             <button class='btn-blog'>Read</button>
                         </div>
@@ -19,45 +23,15 @@
                     </a>
                     <div class="desc">
                         <p class="admin"><span>Posted by:</span> <span>Noah Henderson</span></p>
-                        <h2><a href="blog.html">Openning Branches</a></h2>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                            unorthographic life</p>
+                        <h2><a href="blog.html" class='text-capitalize'>{{$item->title}}</a></h2>
+                        <p class='text-capitalize'>{{$item->body}}</p>
                     </div>
                 </article>
             </div>
-            <div class="col-md-4">
-                <article class="article-entry">
-                    <a href="blog.html" class="blog-img" style="background-image: url(images/blog-2.jpg);">
-                        <p class="meta"><span class="day">02</span><span class="month">Mar</span></p>
-                        <div class="mask d-flex justify-content-center align-items-center">
-                            <button class='btn-blog'>Read</button>
-                        </div>
+            @endforeach
 
-                    </a>
-                    <div class="desc">
-                        <p class="admin"><span>Posted by:</span> <span>Noah Henderson</span></p>
-                        <h2><a href="blog.html">Openning Branches</a></h2>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                            unorthographic life</p>
-                    </div>
-                </article>
-            </div>
-            <div class="col-md-4">
-                <article class="article-entry">
-                    <a href="blog.html" class="blog-img" style="background-image: url(images/blog-3.jpg);">
-                        <p class="meta"><span class="day">02</span><span class="month">Mar</span></p>
-                        <div class="mask d-flex justify-content-center align-items-center">
-                            <button class='btn-blog'>Read</button>
-                        </div>
-                    </a>
-                    <div class="desc">
-                        <p class="admin"><span>Posted by:</span> <span>Noah Henderson</span></p>
-                        <h2><a href="blog.html">Openning Branches</a></h2>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                            unorthographic life</p>
-                    </div>
-                </article>
-            </div>
+
+
         </div>
     </div>
 </div>

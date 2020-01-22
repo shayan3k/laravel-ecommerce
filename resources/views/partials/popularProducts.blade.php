@@ -1,15 +1,14 @@
-<div class="shop-shop py-0">
+<div class="shop-shop">
     <div class="container">
-        <div class="row d-flex justify-content-center align-items-center">
+        <div class="row  d-felx justify-content-center align-items-center">
             <div class="col-md-6 col-md-offset-3 text-center shop-heading">
-                <h2><span>Similar Products</span></h2>
-                <p>We love to tell our successful far far away, behind the word mountains, far from the countries
-                    Vokalia and Consonantia, there live the blind texts.</p>
+                <h2><span>Our Popular Products</span></h2>
+                <p>We love to tell our successful far far away, behind the word mountains, far from the
+                    countries Vokalia and Consonantia, there live the blind texts.</p>
             </div>
         </div>
         <div class="row">
-            @foreach ($recommendedItems as $item)
-
+            @foreach ($latestProducts as $item)
             <div class="col-md-3 text-center">
                 <div class="product-entry">
                     <div class="product-img" style="background-image: url(images/{{ $item->thumbnail }});">
@@ -34,10 +33,7 @@
                     </div>
                 </div>
             </div>
-
             @endforeach
-
-
         </div>
     </div>
 </div>

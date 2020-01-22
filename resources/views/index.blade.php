@@ -5,11 +5,11 @@
 
 @include('partials.hero')
 @include('partials.featuredProduct')
-@include('partials.newArrival')
+@include('partials.newArrival', ['newArrival' => $newArrival])
 @include('partials.intro')
-@include('partials.products')
+@include('partials.popularProducts', ['latestProducts' => $latestProducts])
 @include('partials.testimony')
-@include('partials.blog')
+@include('partials.blog', ['latestPosts' => $latestPosts])
 
 @endsection
 

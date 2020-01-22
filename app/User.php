@@ -15,7 +15,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $gaurded = [];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -34,4 +34,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function posts()
+    {
+        return $this->morphMany('App\Post', 'postable');
+    }
 }

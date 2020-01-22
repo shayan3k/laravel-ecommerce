@@ -6,15 +6,18 @@
 
     <div class="shop-nav d-none d-md-block menu-1 ml-auto" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto shop-navbar-link">
-            <li class="active"><a href="index.html">Home</a> <span class="sr-only">(current)</span></li>
+            <li class="active"><a href="{{ route('index') }}">Home</a> <span class="sr-only">(current)</span></li>
             <li class="has-dropdown">
-                <a href="shop.html">Shop</a>
+                <a href="{{ route('shop') }}">Shop</a>
                 <ul class="dropdown">
-                    <li><a href="product-detail.html">Product Detail</a></li>
-                    <li><a href="cart.html">Shipping Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                    <li><a href="order-complete.html">Order Complete</a></li>
-                    <li><a href="add-to-wishlist.html">Wishlist</a></li>
+
+                    <li><a href="{{ route('product-detail') }}">Product Detail</a></li>
+                    <li><a href="{{ route('cart') }}">Shipping Cart</a></li>
+                    <li><a href="{{ route('checkout') }}">Checkout</a></li>
+                    <li><a href="{{ route('order-complete') }}">Order Complete</a></li>
+                    <li><a href="{{ route('add-to-wishlist') }}">Wishlist</a></li>
+
+
                 </ul>
             </li>
             <li><a href="{{ route('blog') }}">Blog</a></li>
