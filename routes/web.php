@@ -48,6 +48,12 @@
 
         Route::get('/', function () {
 
+            $featuredProducts = db::table('featured_images')
+                ->orderBy('id', 'asc')
+                ->take(4)
+                ->get();
+
+
             $newArrival = Product::where('active', 1)
                 ->orderBy('id', 'desc')
                 ->take(4)
@@ -63,7 +69,16 @@
                 ->take(3)
                 ->get();
 
-            return view('index')->with(['newArrival' => $newArrival, 'latestProducts' => $latestProducts, 'latestPosts' => $latestPosts]);
+
+            $intro = DB::table('intro')
+                ->first();
+
+            $testimony = DB::table('testimony')
+                ->orderBy('id', 'asc')
+                ->take(3)
+                ->get();
+
+            return view('index')->with(['newArrival' => $newArrival, 'latestProducts' => $latestProducts, 'latestPosts' => $latestPosts, 'featuredProducts' => $featuredProducts, 'intro' => $intro, 'testimony' => $testimony]);
         })->name('index');
 
         Route::get('/shop', function () {
@@ -144,3 +159,8 @@
             return view('auth.verify
             ');
         })->name('verification.resend');
+
+
+        Route::post('/subscription', function () {
+            return redirect()->route('index');
+        });

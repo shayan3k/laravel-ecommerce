@@ -2517,7 +2517,7 @@ input[type=text] {
   background: #ff004c;
   color: #fff;
   text-align: center;
-  border-radius: 4px;
+  border-radius: 50% !important;
 }
 
 .gototop a i {
@@ -2531,6 +2531,7 @@ input[type=text] {
 .gototop a:focus {
   text-decoration: none;
   outline: none;
+  background: #3a3939;
 }
 
 .pagination-container > nav,
@@ -3042,12 +3043,14 @@ input[type=text] {
   background: transparent;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
+  color: #fff !important;
+  cursor: pointer;
 }
 
 .btn-blog:hover {
   font-size: 4rem;
   border: none;
-  padding: 100% 100%;
+  padding: 3rem 3rem;
 }
 
 .owl-controls {
@@ -3161,12 +3164,12 @@ input[type=text] {
 
 .btn-custom {
   display: block;
-  font-size: 1rem;
+  font-size: 1.4rem;
   width: 50%;
   padding: 2rem 1rem;
   margin: 0 auto;
   text-align: center;
-  color: #ff004c !important;
+  color: #000 !important;
   border: 3px solid #ff004c;
   cursor: pointer;
   -webkit-transition: all 0.3;
@@ -3264,5 +3267,24 @@ input[type=text] {
           justify-content: center;
   -webkit-box-align: center;
           align-items: center;
+}
+
+.btn-intro {
+  display: block !important;
+  width: 50% !important;
+  padding: 1.3rem 0.8rem !important;
+  border: 2px solid #ff004c !important;
+  font-size: 1.1rem !important;
+  color: #ff004c !important;
+  margin-bottom: 10px !important;
+}
+
+.btn-intro:hover {
+  border-radius: 15px !important;
+  width: 100% !important;
+}
+
+.intro-title {
+  color: #ff004c !important;
 }
 

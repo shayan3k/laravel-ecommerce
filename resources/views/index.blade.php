@@ -4,18 +4,16 @@
 @section('content')
 
 @include('partials.hero')
-@include('partials.featuredProduct')
+@include('partials.featuredProduct', ['featuredProducts' => $featuredProducts])
 @include('partials.newArrival', ['newArrival' => $newArrival])
-@include('partials.intro')
+@include('partials.intro', ['intro' => $intro])
 @include('partials.popularProducts', ['latestProducts' => $latestProducts])
-@include('partials.testimony')
+@include('partials.testimony', ['testimony' => $testimony])
 @include('partials.blog', ['latestPosts' => $latestPosts])
 
 @endsection
 
 
-@section('contents')
-
+@section('goToTop')
 @include('partials.goToTop')
-
 @endsection

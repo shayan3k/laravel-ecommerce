@@ -3,28 +3,31 @@
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <div class="intro-desc">
-                    <div class="text-salebox">
-                        <div class="text-lefts">
-                            <div class="sale-box">
-                                <div class="sale-box-top">
-                                    <h2 class="number">45</h2>
-                                    <span class="sup-1">%</span>
-                                    <span class="sup-2">Off</span>
-                                </div>
-                                <h2 class="text-sale">Sale</h2>
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="sale-box">
+                            <div class="sale-box-top">
+                                <h2 class="display-3 text-capitalize intro-title">{{$intro->title}}</h2>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="col-12">
                         <div class="text-rights">
-                            <h3 class="title">Just hurry up limited offer!</h3>
-                            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-                                large language ocean.</p>
-                            <p><a href="shop.html" class="btn btn-primary">Shop Now</a> <a href="#"
-                                    class="btn btn-primary btn-outline">Read more</a></p>
+                            <h3 class="title">{{$intro->subtitle}}</h3>
+                            <p>{{$intro->body}}</p>
+                            <div><a href="{{$intro->btn1_link }}" class="btn-intro">{{$intro->btn1_text}}</a></div>
+                            <div> <a href="{{$intro->btn2_link }}" class="btn-intro">{{$intro->btn2_text }}</a></div>
                         </div>
                     </div>
+
+
                 </div>
+
+
+
+
             </div>
         </div>
     </div>

@@ -12,6 +12,7 @@ $brand-yellow: #ffdd00 !default;
 $brand-footer-color: #2c2e3e;
 
 $brand-sucess:#379500 !important;
+$brand-black : #000 !important;
 
 $brand-white: #fff;
 $brand-black: #000;
@@ -2636,7 +2637,6 @@ input[type="text"] {
     opacity: 0;
     visibility: hidden;
     @include transition(0.5s);
-
     &.active {
         opacity: 1;
         visibility: visible;
@@ -2649,7 +2649,7 @@ input[type="text"] {
         background: rgba($brand-primary, 1);
         color: $brand-white;
         text-align: center;
-        @include border-radius(4px);
+        border-radius: 50% !important;
 
         i {
             height: 50px;
@@ -2662,6 +2662,7 @@ input[type="text"] {
         &:focus {
             text-decoration: none;
             outline: none;
+            background : rgb(58, 57, 57);
         }
     }
 }
@@ -3198,11 +3199,12 @@ input[type="text"] {
     border-radius: 10px;
     background: transparent;
     transition: 0.3s all;
-
+    color : $brand-white !important;
+    cursor: pointer;
     &:hover {
         font-size: 4rem;
         border: none;
-        padding: 100% 100%;
+        padding: 3rem 3rem;
     }
 }
 
@@ -3325,12 +3327,12 @@ input[type="text"] {
 
 .btn-custom {
     display: block;
-    font-size: 1rem;
+    font-size: 1.4rem;
     width: 50%;
     padding: 2rem 1rem;
     margin: 0 auto;
     text-align: center;
-    color: $brand-primary !important;
+    color: $brand-black !important;
     border: 3px solid $brand-primary;
     cursor: pointer;
     transition: all .3;
@@ -3440,4 +3442,26 @@ input[type="text"] {
     display: flex !important;
     justify-content: center;
     align-items: center;
+}
+
+
+.btn-intro {
+    display : block !important;
+    width : 50% !important;
+    padding : 1.3rem .8rem !important;
+    border : 2px solid $brand-primary !important;
+    font-size : 1.1rem !important;
+    color : $brand-primary !important;
+    margin-bottom : 10px !important;
+    &:hover {
+        border-radius : 15px !important;
+        width : 100% !important;
+
+    }
+
+}
+
+.intro-title{
+    color : $brand-primary !important;
+    
 }
