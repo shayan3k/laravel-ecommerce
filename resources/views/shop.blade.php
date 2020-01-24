@@ -95,8 +95,10 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading" role="tab" id="headingOne">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                                                aria-expanded="true" aria-controls="collapseOne">Men
+                                            <a data-toggle="collapse"
+                                                href="#collapseOne"
+                                                aria-expanded="true"
+                                                role="button" aria-controls="collapseOne">Men
                                             </a>
                                         </h4>
                                     </div>
@@ -248,9 +250,14 @@
     </div>
 </div>
 
+
+
+
 @endsection
 
 
 @section('goToTop')
 @include('partials.goToTop')
+
+
 @endsection

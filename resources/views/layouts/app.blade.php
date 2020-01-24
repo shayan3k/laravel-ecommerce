@@ -1,5 +1,6 @@
 @include('partials.header')
 
+
 <body>
     <div class="shop-loader"></div>
 

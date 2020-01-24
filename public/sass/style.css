@@ -1551,6 +1551,7 @@ figure {
   position: absolute;
   left: 0;
   top: 0;
+  z-index: -1 !important;
   border: 2px solid #ff004c;
 }
 
@@ -2514,10 +2515,8 @@ input[type=text] {
   width: 50px;
   height: 50px;
   display: table;
-  background: #ff004c;
-  color: #fff;
+  color: #ff004c !important;
   text-align: center;
-  border-radius: 50% !important;
 }
 
 .gototop a i {
@@ -3286,5 +3285,18 @@ input[type=text] {
 
 .intro-title {
   color: #ff004c !important;
+}
+
+#shop-featured-product > div > div:nth-child(2) > div:nth-child(1) > div > div > a > div > h2,
+#shop-featured-product > div > div:nth-child(2) > div:nth-child(2) > a > div > h2 {
+  color: #ffdd00 !important;
+}
+
+.bg-login {
+  background: #E8F0FE !important;
+}
+
+textarea.form-control {
+  height: 140px !important;
 }
 

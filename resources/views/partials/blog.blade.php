@@ -9,7 +9,7 @@
         </div>
         <div class="row">
 
-            @foreach ($latestPosts as $item)
+            @foreach ($blogPosts as $item)
             <div class="col-md-4">
                 <article class="article-entry">
                     <a href="blog.html" class="blog-img" style="background-image: url(images/{{ $item->thumbnail}});">

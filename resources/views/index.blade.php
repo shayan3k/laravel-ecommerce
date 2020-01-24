@@ -9,7 +9,7 @@
 @include('partials.intro', ['intro' => $intro])
 @include('partials.popularProducts', ['latestProducts' => $latestProducts])
 @include('partials.testimony', ['testimony' => $testimony])
-@include('partials.blog', ['latestPosts' => $latestPosts])
+@include('partials.blog', ['blogPosts' => $latestPosts])
 
 @endsection
 

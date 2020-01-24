@@ -290,7 +290,6 @@
     </div>
 </div>
 
-@include('partials.recommendedItems')
 
 @endsection
 

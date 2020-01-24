@@ -14,10 +14,12 @@
         use App\Post;
         use App\Product;
         use App\User;
+        use Illuminate\Http\Request;
         use Illuminate\Support\Facades\Auth;
         use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
-        Route::get('/test', function () {
+Route::get('/test', function () {
 
 
             // $user = User::find(Auth::id());
@@ -81,15 +83,11 @@
             return view('index')->with(['newArrival' => $newArrival, 'latestProducts' => $latestProducts, 'latestPosts' => $latestPosts, 'featuredProducts' => $featuredProducts, 'intro' => $intro, 'testimony' => $testimony]);
         })->name('index');
 
-        Route::get('/shop', function () {
 
-            $allProducts = DB::table('products')->orderBy('created_at', 'desc')->paginate(15);
-            return view('shop', ['allProducts' => $allProducts]);
-        })->name('shop');
 
-        Route::get('/product-detail', function () {
-            return view('product-detail');
-        })->name('product-detail');
+
+
+        Route::get('/shop/{id}', 'ProductController@single');
 
         Route::get('/contact', function () {
             return view('contact');
@@ -99,9 +97,35 @@
             return view('about');
         })->name('about');
 
-        Route::get('/blog', function () {
-            return view('blog');
-        })->name('blog');
+
+
+
+        Route::get('/contact', function () {
+            return view('contact');
+        })->name('contact');
+
+
+
+        Route::Post('/contact', function (Request $request) {
+
+
+            Mail::send('emails.template', ['title' => 'Email Title','body'=>'This is the text for body' ], function ($m) {
+                $m->from('theApplication@app.com')
+                    ->to('shayan3k@gmial.com')
+                    ->subject('');
+            });
+            return view('message')->with(['status'=>'success' , 'msg'=>'Your message has been sent successfully!']);
+
+        });
+
+
+
+        Route::get('/shop','ProductController@shop')->name('shop');
+        Route::get('/shop/{query}','ProductController@query')->name('query');
+
+
+        Route::get('/blog', 'PostController@blog')->name('blog');
+        Route::get('/blog/{id}', 'PostController@single')->name('blog-detail');
 
 
         Route::group(['middleware' => ['auth']], function () {

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 
-@section('contents')
+@section('content')
 <aside id="shop-hero" class="breadcrumbs">
     <div class="flexslider">
         <ul class="slides">
@@ -29,42 +29,38 @@
 
                 <div class="contact-wrap">
                     <h3>Get In Touch</h3>
-                    <form action="#">
+                    <form action="/contact" method='POST'>
+                        @csrf
                         <div class="row form-group">
                             <div class="col-md-6 padding-bottom">
-                                <label for="fname">First Name</label>
-                                <input type="text" id="fname" class="form-control" placeholder="Your firstname">
+                                <input type="text" name='fname' id="fname" class="form-control bg-login" placeholder="Enter You First Name" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="lname">Last Name</label>
-                                <input type="text" id="lname" class="form-control" placeholder="Your lastname">
+                                <input type="text" name='lname' id="lname" class="form-control bg-login" placeholder="Enter You Last Name" required>
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <label for="email">Email</label>
-                                <input type="text" id="email" class="form-control" placeholder="Your email address">
+                                <input type="email" id="email" class="form-control bg-login" placeholder="Enter You Email Address" required>
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" class="form-control"
-                                    placeholder="Your subject of this message">
+                                <input type="text" name='subject' id="subject" class="form-control bg-login"
+                                    placeholder="Enter The Subject" required>
                             </div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-12">
-                                <label for="message">Message</label>
-                                <textarea name="message" id="message" cols="30" rows="10" class="form-control"
-                                    placeholder="Say something about us"></textarea>
+                                <textarea name="message" id="message" cols="40" rows="10" class="form-control bg-login"
+                                    placeholder="What's On Your Mind?"></textarea>
                             </div>
                         </div>
                         <div class="form-group text-center">
-                            <input type="submit" value="Send Message" class="btn btn-primary">
+                            <input type="submit" value="Send" class="btn-login">
                         </div>
                     </form>
                 </div>
@@ -127,7 +123,6 @@
     </div>
 
 </div>
-@include('partials.recommendedItems')
 @endsection
 
 
