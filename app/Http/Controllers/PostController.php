@@ -28,6 +28,7 @@ class PostController extends Controller
      */
     public function single($id)
     {
+
             $post = Post::find($id);
             return view('blog-detail')->with(['post' => $post]);
     }

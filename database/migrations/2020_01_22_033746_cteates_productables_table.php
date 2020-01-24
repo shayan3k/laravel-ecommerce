@@ -15,9 +15,10 @@ class CteatesProductablesTable extends Migration
     {
         Schema::create('productables', function (Blueprint $table) {
             $table->bigIncrements('product_id');
+            $table->unsignedBigInteger('quantity');
+            $table->timestamps();
             $table->unsignedBigInteger('productable_id');
             $table->string('productable_type');
-            $table->timestamps();
         });
     }
 

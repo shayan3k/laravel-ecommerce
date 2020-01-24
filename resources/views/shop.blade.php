@@ -24,6 +24,20 @@
     </div>
 </aside>
 
+{{-- Message Section --}}
+@if(isset($status))
+    @if ($status == 'success')
+        <div class="container"><div class="alert alert-success">{{$msg}}</div></div>
+    @endif
+
+    @if ($status == 'error')
+        <div class="container"><div class="alert alert-danger">{{$msg}}</div></div>
+    @endif
+    @if ($status == 'warning')
+        <div class="container"><div class="alert alert-warning">{{$msg}}</div></div>
+    @endif
+@endif
+
 <div class="shop-shop">
     <div class="container">
         <div class="row">

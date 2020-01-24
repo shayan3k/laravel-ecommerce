@@ -31,9 +31,12 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function query($id)
+    public function query($id, $p, $m)
     {
-            $allProducts = DB::table('products')->orderBy('created_at', 'desc')->paginate(15);
+
+
+            dd($p,$m);
+            $allProducts = Product::orderBy('created_at', 'desc')->paginate(15);
             return view('shop', ['allProducts' => $allProducts]);
     }
 

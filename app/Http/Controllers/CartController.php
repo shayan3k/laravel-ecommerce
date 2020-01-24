@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\User;
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -25,9 +28,27 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function add(Request $request)
+    public function add(Request $request, $id)
     {
             $quantity = $request->quantity;
+            $product = Product::find($id);
+
+
+            if( User::find(Auth::id())->products()
+            ->where('product_id','=',$id)
+            ->where('productable_id','=' , Auth::id())->count()){
+
+                return redirect()->route('query', ['query' => $id])->with(['status'=> 'warning' , 'message'=>'The item is already in your cart :)', 'product' => $product]);
+
+
+
+            }
+            else{
+                $user = User::find(Auth::id())->products()->attach([$id] , ['quantity'=>$quantity, 'created_at' => now() , 'updated_at' => now()]);
+
+                return redirect()->route('query', ['query' => $id])->with(['status'=> 'success' , 'message'=>'You item has been added to the cart :)', 'product' => $product]);
+
+            }
 
 
 
