@@ -118,14 +118,20 @@ Route::get('/test', function () {
 
         });
 
+        Route::get('/product-detail',function(){
+            return view('product-detail');
+        })->name('product-detail');
 
 
         Route::get('/shop','ProductController@shop')->name('shop');
         Route::get('/shop/{query}','ProductController@query')->name('query');
+        Route::post('shop/cart/{id}', 'CartController@add')->name('cart.add');
 
 
         Route::get('/blog', 'PostController@blog')->name('blog');
         Route::get('/blog/{id}', 'PostController@single')->name('blog-detail');
+
+
 
 
         Route::group(['middleware' => ['auth']], function () {

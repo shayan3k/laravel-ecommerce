@@ -24,28 +24,13 @@
     </div>
 </aside>
 
-{{--
-<div class="container">
-    @foreach ($users as $user)
-        {{ $user->name }}
-@endforeach
-</div>
-
-{{ $users->links() }} --}}
-
-
 <div class="shop-shop">
     <div class="container">
         <div class="row">
 
             <div
                 class="col-md-9 col-md-push-2 d-flex flex-column justify-content-between align-items-center order-2 order-md-1 py-4">
-
-
-
                 <div class="row row-pb-lg w-100">
-
-
                     @foreach ($allProducts as $item)
                     {{-- {{ dd($item) }} --}}
                     <div class="col-md-4 text-center">

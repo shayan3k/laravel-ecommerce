@@ -1,9 +1,11 @@
 <nav id='navbar' class="navbar navbar-expand-md navbar-light bg-transparent d-flex mx-lg-5 mx-md-2 mx-sm-1">
     <a class="navbar-brand d-flex justify-content-center align-items-center" href="{{ route('index') }}">
+        @if(Request::is('*/*'))
+        <img class='px-3' src="../images/logo.png" width='40%' alt="logo">
+        @else
         <img class='px-3' src="./images/logo.png" width='40%' alt="logo">
+        @endif
     </a>
-
-
     <div class="shop-nav d-none d-md-block menu-1 ml-auto" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto shop-navbar-link">
             <li class="active"><a href="{{ route('index') }}">Home</a> <span class="sr-only">(current)</span></li>
