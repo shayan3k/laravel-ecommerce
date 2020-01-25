@@ -68,13 +68,10 @@
 
 
 
-                @forelse ($product as $item)
+                @forelse ($products as $item)
                 <div class="product-cart">
-
-
-
                     <div class="one-forth">
-                        <div class="product-img" style="background-image: url(images/item-6.jpg);">
+                        <div class="product-img" style="background-image: url(../images/{{$item->attributes->thumbnail}});">
                         </div>
                         <div class="display-tc">
                             <h3>{{$item->name}}</h3>
@@ -88,26 +85,28 @@
                     <div class="one-eight text-center">
                         <div class="display-tc">
                             <input type="text" id="quantity" name="quantity"
-                                class="form-control input-number text-center" value="1" min="1" max="100">
+                                class="form-control input-number text-center" value="{{$item->quantity}}" min="1" max="100">
                         </div>
                     </div>
                     <div class="one-eight text-center">
                         <div class="display-tc">
-                            <span class="price">$120.00</span>
+                            <span class="price">${{$item->price * $item->quantity}}</span>
                         </div>
                     </div>
                     <div class="one-eight text-center">
                         <div class="display-tc">
-                            <a href="#" class="closed"></a>
+                        <a href="/cart/remove/{{$item->id}}" class="closed"></a>
                         </div>
                     </div>
-
-
-
-
                 </div>
                 @empty
+                <div class="alert alert-info">
 
+
+                    <h2>No item to show</h2>
+                    <h4>try to add new items to your cart :)</h4>
+
+                </div>
                 @endforelse
 
 
@@ -137,12 +136,12 @@
                         <div class="col-md-3 col-md-push-1 text-center">
                             <div class="total">
                                 <div class="sub">
-                                    <p><span>Subtotal:</span> <span>$200.00</span></p>
+                                <p><span>Subtotal:</span> <span>${{$subTotal}}</span></p>
                                     <p><span>Delivery:</span> <span>$0.00</span></p>
                                     <p><span>Discount:</span> <span>$45.00</span></p>
                                 </div>
                                 <div class="grand-total">
-                                    <p><span><strong>Total:</strong></span> <span>$450.00</span></p>
+                                <p><span><strong>Total:</strong></span> <span>${{$total}}</span></p>
                                 </div>
                             </div>
                         </div>

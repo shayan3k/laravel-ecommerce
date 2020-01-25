@@ -17,35 +17,22 @@
         use Illuminate\Http\Request;
         use Illuminate\Support\Facades\Auth;
         use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
+        use Illuminate\Support\Facades\Mail;
 
-Route::get('/test', function () {
+        Route::get('/test/{id}', function ($id) {
 
+            $Product = Product::find($id); // assuming you have a Product model with id, name, description & price
+            $rowId = uniqid(); // generate a unique() row ID
+            $userID = Auth::id(); // the user ID to bind the cart contents
+            \Cart::session($userID)->add(array(
+                'id' => $rowId,
+                'name' => $Product->name,
+                'price' => $Product->price,
+                'quantity' => 4,
+                'attributes' => array(),
+                'associatedModel' => $Product
+            ));
 
-            // $user = User::find(Auth::id());
-
-            // $user->posts()->create([
-
-            //     'title' => 'Blog Post 1',
-            //     'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-            //     'active' => '1',
-            //     'thumbnail' => 'blog-1.jpg',
-            //     'created_at' => now(),
-            //     'updated_at' => now(),
-
-            // ]);
-
-
-            // $product = Product::find(1);
-
-            // $product->tags()->create([
-            //     'name' => 'newTag'
-            // ]);
-
-
-            $user = User::find(1);
-            $product = Product::find(1);
-            $user->products()->attach($product);
         });
 
         Route::get('/', function () {
@@ -137,6 +124,8 @@ Route::get('/test', function () {
 
             Route::post('shop/cart/{id}', 'CartController@add')->name('cart.add');
             Route::get('cart', 'CartController@show')->name('cart.show');
+            Route::get('cart/remove/{id}', 'CartController@destroy')->name('cart.destroy');
+            Route::get('cart/clear', 'CartController@clear')->name('cart.clear');
 
 
             Route::get('/order-complete', function () {

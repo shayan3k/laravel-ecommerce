@@ -30,7 +30,7 @@
             <li>
                 <a href="{{ route('cart.show') }}"><i class="icon-shopping-cart"></i>
                     Cart
-                    <span class="badge badge-pill badge-warning text-white">0</span>
+                <span class="badge badge-pill badge-warning text-white">0</span>
                 </a>
             </li>
             <li>
