@@ -2,7 +2,7 @@
 
 
 @section('content')
-
+@include('partials.message', ['errors' => $errors])
 @include('partials.hero')
 @include('partials.featuredProduct', ['featuredProducts' => $featuredProducts])
 @include('partials.products', ['products' => $newArrival])

@@ -3478,3 +3478,18 @@ color : $brand-yellow !important;
 textarea.form-control {
     height : 140px !important;
 }
+
+
+.addtocart > form {
+        display : inline-block !important;
+
+    button{
+
+    background : transparent !important;
+    border : none;
+    outline : 0;
+    cursor: pointer;
+    color : $brand-primary !important;
+
+
+}}

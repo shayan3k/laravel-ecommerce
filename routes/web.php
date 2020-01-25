@@ -125,7 +125,6 @@ Route::get('/test', function () {
 
         Route::get('/shop','ProductController@shop')->name('shop');
         Route::get('/shop/{query}','ProductController@query')->name('query');
-        Route::post('shop/cart/{id}', 'CartController@add')->name('cart.add');
 
 
         Route::get('/blog', 'PostController@blog')->name('blog');
@@ -136,6 +135,10 @@ Route::get('/test', function () {
 
         Route::group(['middleware' => ['auth']], function () {
 
+            Route::post('shop/cart/{id}', 'CartController@add')->name('cart.add');
+            Route::get('cart', 'CartController@show')->name('cart.show');
+
+
             Route::get('/order-complete', function () {
                 return view('order-complete');
             })->name('order-complete');
@@ -144,9 +147,6 @@ Route::get('/test', function () {
                 return view('checkout');
             })->name('checkout');
 
-            Route::get('/cart', function () {
-                return view('cart');
-            })->name('cart');
 
             Route::get('/add-to-wishlist', function () {
                 return view('add-to-wishlist');

@@ -24,23 +24,19 @@
     </div>
 </aside>
 
-{{-- Message Section --}}
-@if(isset($status))
-    @if ($status == 'success')
-        <div class="container"><div class="alert alert-success">{{$msg}}</div></div>
-    @endif
-
-    @if ($status == 'error')
-        <div class="container"><div class="alert alert-danger">{{$msg}}</div></div>
-    @endif
-    @if ($status == 'warning')
-        <div class="container"><div class="alert alert-warning">{{$msg}}</div></div>
-    @endif
-@endif
 
 <div class="shop-shop">
+
+    @if($errors->any())
+        <div class="container-fluid py-3">
+            <div class="alert alert-{!!  $errors->first('status') !!}">{!!  $errors->first('msg') !!}</div>
+        </div>
+    @endif
+
+
     <div class="container">
         <div class="row">
+            @include('partials.message' , ['errors' => $errors])
 
             <div
                 class="col-md-9 col-md-push-2 d-flex flex-column justify-content-between align-items-center order-2 order-md-1 py-4">

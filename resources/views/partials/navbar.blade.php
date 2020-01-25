@@ -14,7 +14,7 @@
                 <ul class="dropdown">
 
                     <li><a href="{{ route('product-detail') }}">Product Detail</a></li>
-                    <li><a href="{{ route('cart') }}">Shipping Cart</a></li>
+                    <li><a href="{{ route('cart.show') }}">Shipping Cart</a></li>
                     <li><a href="{{ route('checkout') }}">Checkout</a></li>
                     <li><a href="{{ route('order-complete') }}">Order Complete</a></li>
                     <li><a href="{{ route('add-to-wishlist') }}">Wishlist</a></li>
@@ -28,7 +28,7 @@
 
             @auth
             <li>
-                <a href="{{ route('cart') }}"><i class="icon-shopping-cart"></i>
+                <a href="{{ route('cart.show') }}"><i class="icon-shopping-cart"></i>
                     Cart
                     <span class="badge badge-pill badge-warning text-white">0</span>
                 </a>

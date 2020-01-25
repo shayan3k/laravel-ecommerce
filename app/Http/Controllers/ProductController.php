@@ -33,8 +33,6 @@ class ProductController extends Controller
      */
     public function query($id, $p, $m)
     {
-
-
             dd($p,$m);
             $allProducts = Product::orderBy('created_at', 'desc')->paginate(15);
             return view('shop', ['allProducts' => $allProducts]);

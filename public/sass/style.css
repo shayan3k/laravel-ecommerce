@@ -3300,3 +3300,15 @@ textarea.form-control {
   height: 140px !important;
 }
 
+.addtocart > form {
+  display: inline-block !important;
+}
+
+.addtocart > form button {
+  background: transparent !important;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  color: #ff004c !important;
+}
+

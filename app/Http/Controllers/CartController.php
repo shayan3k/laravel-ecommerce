@@ -8,6 +8,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
 {
@@ -31,46 +32,28 @@ class CartController extends Controller
     public function add(Request $request, $id)
     {
             $quantity = $request->quantity;
-            $product = Product::find($id);
-
 
             if( User::find(Auth::id())->products()
             ->where('product_id','=',$id)
             ->where('productable_id','=' , Auth::id())->count()){
 
-                return redirect()->route('query', ['query' => $id])->with(['status'=> 'warning' , 'message'=>'The item is already in your cart :)', 'product' => $product]);
-
-
-
+                return redirect()->back()->withErrors(['status'=>'danger' , 'msg'=>'The item is already in your cart']);
             }
             else{
-                $user = User::find(Auth::id())->products()->attach([$id] , ['quantity'=>$quantity, 'created_at' => now() , 'updated_at' => now()]);
 
-                return redirect()->route('query', ['query' => $id])->with(['status'=> 'success' , 'message'=>'You item has been added to the cart :)', 'product' => $product]);
-
+                $product = Product::find($id);
+                dd($product);
+                $user = User::find(Auth::id())->products()->attach([$id] , ['quantity'=>$quantity, 'name '=>$product->thumbnail,'price'=>$product->price , 'thumbnail'=>$product->thumbnail, 'created_at' => now() , 'updated_at' => now()]);
+                return redirect()->back()->withErrors(['status'=>'success' , 'msg'=>'The item was added to your cart']);
             }
 
-
-
-
-
-
-
     }
 
 
 
 
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -86,12 +69,24 @@ class CartController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Cart  $cart
+     * @param  \App\User  $cart
      * @return \Illuminate\Http\Response
      */
-    public function show(Cart $cart)
+    public function show()
     {
-        //
+
+        $product =
+
+
+        $user = Auth::user();
+
+        $products = DB::select('select * from productables where productable_id = ?', [$user->id]);
+
+        dd($products);
+
+        view('cart')->with(['user'=>$products]);
+
+
     }
 
     /**

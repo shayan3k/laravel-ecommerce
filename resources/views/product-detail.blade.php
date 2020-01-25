@@ -26,31 +26,23 @@
 </aside>
 
 
-
 {{-- Message Section --}}
-@if(isset($status))
-    @if ($status == 'success')
-        <div class="container"><div class="alert alert-success">{{$msg}}</div></div>
-    @endif
-
-    @if ($status == 'error')
-        <div class="container"><div class="alert alert-danger">{{$msg}}</div></div>
-    @endif
-    @if ($status == 'warning')
-        <div class="container"><div class="alert alert-warning">{{$msg}}</div></div>
-    @endif
-@endif
 
 
 
 
 <div class="shop-shop">
+
+
+
+
     <div class="container">
         <div class="row row-pb-lg d-flex justify-content-center align-items-center">
+
             <div class="col-md-11 col-md-offset-1">
                 <div class="product-detail-wrap">
                     <div class="row">
-
+                        @include('partials.message' , ['errors' => $errors])
                         <div class="col-md-7">
                             <div class="desc">
 
