@@ -19,19 +19,11 @@
         use Illuminate\Support\Facades\DB;
         use Illuminate\Support\Facades\Mail;
 
-        Route::get('/test/{id}', function ($id) {
+        Route::get('/test', function () {
 
-            $Product = Product::find($id); // assuming you have a Product model with id, name, description & price
-            $rowId = uniqid(); // generate a unique() row ID
-            $userID = Auth::id(); // the user ID to bind the cart contents
-            \Cart::session($userID)->add(array(
-                'id' => $rowId,
-                'name' => $Product->name,
-                'price' => $Product->price,
-                'quantity' => 4,
-                'attributes' => array(),
-                'associatedModel' => $Product
-            ));
+
+            $user = Auth::user()->isAdmin(); // the user ID to bind the cart contents
+            dd($user);
 
         });
 
@@ -132,9 +124,9 @@
                 return view('order-complete');
             })->name('order-complete');
 
-            Route::get('/checkout', function () {
-                return view('checkout');
-            })->name('checkout');
+            Route::get('/checkout', 'CartController@checkout')->name('checkout');
+
+            Route::get('/admin', 'HomeController@admin')->name('admin');
 
 
             Route::get('/add-to-wishlist', function () {

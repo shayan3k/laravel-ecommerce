@@ -44,4 +44,10 @@ class User extends Authenticatable
     {
         return $this->morphToMany('App\Product', 'productable');
     }
+
+    public function isAdmin() {
+        //Super Simple admin check for this project instead of defining Role and Role_user tables
+            return $this->role=='admin';
+      }
+
 }

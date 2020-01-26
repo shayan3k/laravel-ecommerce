@@ -48,83 +48,61 @@
         <div class="row">
             <div class="col-md-7">
                 <form method="post" class="shop-form">
-                    <h2>Billing Details</h2>
+                    <h2>Billing Information</h2>
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="country">Select Country</label>
-                                <div class="form-field">
-                                    <i class="icon icon-arrow-down3"></i>
-                                    <select name="people" id="people" class="form-control">
-                                        <option value="#">Select country</option>
-                                        <option value="#">Alaska</option>
-                                        <option value="#">China</option>
-                                        <option value="#">Japan</option>
-                                        <option value="#">Korea</option>
-                                        <option value="#">Philippines</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
+
                         <div class="form-group">
-                            <div class="col-md-6">
-                                <label for="fname">First Name</label>
-                                <input type="text" id="fname" class="form-control" placeholder="Your firstname">
+                            <div class="col-md-10">
+                                <label for="fname">*First Name</label>
+                                <input type="text" id="fname" class="form-control loginInput" placeholder="Your firstname" required>
                             </div>
-                            <div class="col-md-6">
-                                <label for="lname">Last Name</label>
-                                <input type="text" id="lname" class="form-control" placeholder="Your lastname">
+                            <div class="col-md-10">
+                                <label for="lname">*Last Name</label>
+                                <input type="text" id="lname" class="form-control loginInput w-100" placeholder="Your lastname" required>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-10">
                             <div class="form-group">
                                 <label for="companyname">Company Name</label>
-                                <input type="text" id="companyname" class="form-control" placeholder="Company Name">
+                                <input type="text" id="companyname" class="form-control loginInput" placeholder="Company Name">
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-10">
                             <div class="form-group">
-                                <label for="fname">Address</label>
-                                <input type="text" id="address" class="form-control" placeholder="Enter Your Address">
+                                <label for="fname">*Address</label>
+                                <input type="text" id="address" class="form-control loginInput" placeholder="Enter Your Address" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" id="address2" class="form-control" placeholder="Second Address">
+                                <input type="text" id="address2" class="form-control loginInput" placeholder="Second Address">
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-10">
                             <div class="form-group">
-                                <label for="companyname">Town/City</label>
-                                <input type="text" id="towncity" class="form-control" placeholder="Town or City">
+                                <label for="companyname">*Town/City</label>
+                                <input type="text" id="towncity" class="form-control loginInput" placeholder="Town or City" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-6">
-                                <label for="stateprovince">State/Province</label>
-                                <input type="text" id="fname" class="form-control" placeholder="State Province">
+                            <div class="col-md-10">
+                                <label for="stateprovince">*State/Province</label>
+                                <input type="text" id="fname" class="form-control loginInput" placeholder="State Province" required>
                             </div>
-                            <div class="col-md-6">
-                                <label for="lname">Zip/Postal Code</label>
-                                <input type="text" id="zippostalcode" class="form-control" placeholder="Zip / Postal">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-6">
-                                <label for="email">E-mail Address</label>
-                                <input type="text" id="email" class="form-control" placeholder="State Province">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="Phone">Phone Number</label>
-                                <input type="text" id="zippostalcode" class="form-control" placeholder="">
+                            <div class="col-md-10">
+                                <label for="lname">*Zip/Postal Code</label>
+                                <input type="text" id="zippostalcode" class="form-control loginInput" placeholder="Zip / Postal" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-12">
-                                <div class="radio">
-                                    <label><input type="radio" name="optradio">Create an Account? </label>
-                                    <label><input type="radio" name="optradio"> Ship to different address</label>
-                                </div>
+                            <div class="col-md-10">
+                                <label for="email">*E-mail Address</label>
+                                <input type="email" id="email" class="form-control loginInput" placeholder="State Province" required>
+                            </div>
+                            <div class="col-md-10">
+                                <label for="Phone">*Phone Number</label>
+                                <input type="text" id="zippostalcode" class="form-control loginInput" placeholder="" required>
                             </div>
                         </div>
+
                     </div>
                 </form>
             </div>
@@ -133,14 +111,11 @@
                     <h2>Cart Total</h2>
                     <ul>
                         <li>
-                            <span>Subtotal</span> <span>$100.00</span>
-                            <ul>
-                                <li><span>1 x Product Name</span> <span>$99.00</span></li>
-                                <li><span>1 x Product Name</span> <span>$78.00</span></li>
-                            </ul>
+                        <span>Subtotal</span> <span>${{$subTotal}}</span>
+
                         </li>
-                        <li><span>Shipping</span> <span>$0.00</span></li>
-                        <li><span>Order Total</span> <span>$180.00</span></li>
+                        <li><span>Shipping</span> <span>$7</span></li>
+                    <li><span>Order Total</span> <span>${{$total}}</span></li>
                     </ul>
                 </div>
                 <div class="cart-detail">
@@ -184,8 +159,6 @@
         </div>
     </div>
 </div>
-
-@include('partials.recommendedItems')
 
 
 

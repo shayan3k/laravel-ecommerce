@@ -27,12 +27,6 @@
 
 <div class="shop-shop">
 
-    @if($errors->any())
-        <div class="container-fluid py-3">
-            <div class="alert alert-{!!  $errors->first('status') !!}">{!!  $errors->first('msg') !!}</div>
-        </div>
-    @endif
-
 
     <div class="container">
         <div class="row">

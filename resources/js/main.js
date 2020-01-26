@@ -385,6 +385,8 @@
         }
     };
 
+
+
     $(function() {
         mobileMenuOutsideClick();
         offcanvasMenu();
@@ -393,12 +395,11 @@
         sliderMain();
         dropdown();
         goToTop();
-        loaderPage();
         owlCrouselFeatureSlide();
         parallax();
         datePicker();
         cartHoverAnimationInit();
-        // blogHoverAnimationInit();
         brandEffect();
+        loaderPage();
     });
 })();

@@ -418,13 +418,12 @@
     sliderMain();
     dropdown();
     goToTop();
-    loaderPage();
     owlCrouselFeatureSlide();
     parallax();
     datePicker();
-    cartHoverAnimationInit(); // blogHoverAnimationInit();
-
+    cartHoverAnimationInit();
     brandEffect();
+    loaderPage();
   });
 })();
 

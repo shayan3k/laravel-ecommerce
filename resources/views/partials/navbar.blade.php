@@ -8,34 +8,30 @@
     </a>
     <div class="shop-nav d-none d-md-block menu-1 ml-auto" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto shop-navbar-link">
-            <li class="active"><a href="{{ route('index') }}">Home</a> <span class="sr-only">(current)</span></li>
-            <li class="has-dropdown">
-                <a href="{{ route('shop') }}">Shop</a>
-                <ul class="dropdown">
-
-                    <li><a href="{{ route('product-detail') }}">Product Detail</a></li>
-                    <li><a href="{{ route('cart.show') }}">Shipping Cart</a></li>
-                    <li><a href="{{ route('checkout') }}">Checkout</a></li>
-                    <li><a href="{{ route('order-complete') }}">Order Complete</a></li>
-                    <li><a href="{{ route('add-to-wishlist') }}">Wishlist</a></li>
-
-
-                </ul>
-            </li>
-            <li><a href="{{ route('blog') }}">Blog</a></li>
-            <li><a href="{{ route('about') }}">About</a></li>
-            <li><a href="{{ route('contact') }}">Contact</a></li>
+            <li class="{{(Request::is('/'))?'active':''}}"><a href="{{ route('index') }}">Home</a></li>
+            <li class="{{(Request::is('blog'))?'active':''}}"><a href="{{ route('blog') }}">Blog</a></li>
+            <li class="{{(Request::is('shop'))?'active':''}}"><a href="{{ route('shop') }}">Shop</a></li>
+            <li class="{{(Request::is('about'))?'active':''}}"><a href="{{ route('about') }}">About</a></li>
+            <li class="{{(Request::is('contact'))?'active':''}}"><a href="{{ route('contact') }}">Contact</a></li>
 
             @auth
-            <li>
-                <a href="{{ route('cart.show') }}"><i class="icon-shopping-cart"></i>
+
+            <li class="{{(Request::is('/cart'))?'active':''}}">
+                <a href="{{ route('cart.show') }}">
                     Cart
-                <span class="badge badge-pill badge-warning text-white">0</span>
                 </a>
             </li>
-            <li>
 
-                <form action="{{ route('logout') }}" method="post">
+            @if(Auth::user()->isAdmin())
+            <li class="{{(Request::is('/admin'))?'active':''}}">
+                <a href="{{ route('admin') }}">
+                    Admin
+                </a>
+            </li>
+            @endif
+
+            <li>
+            <form action="{{ route('logout') }}" method="post">
                     @csrf
                     <button type="submit" class='btn-logout-form' style='color : #379500;'>Logout</button>
                 </form>

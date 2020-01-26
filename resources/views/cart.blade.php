@@ -48,57 +48,63 @@
         </div>
         <div class="row row-pb-md">
             <div class="col-md-10 col-md-offset-1">
-                <div class="product-name">
-                    <div class="one-forth text-center">
+                <div class="row">
+                    <div class="col-4 text-center">
                         <span>Product Details</span>
                     </div>
-                    <div class="one-eight text-center">
+                    <div class="col-2 text-center">
                         <span>Price</span>
                     </div>
-                    <div class="one-eight text-center">
+                    <div class="col-2 text-center">
                         <span>Quantity</span>
                     </div>
-                    <div class="one-eight text-center">
+                    <div class="col-2 text-center">
                         <span>Total</span>
                     </div>
-                    <div class="one-eight text-center">
+                    <div class="col-2 text-center">
                         <span>Remove</span>
                     </div>
                 </div>
+                <hr>
+
 
 
 
                 @forelse ($products as $item)
-                <div class="product-cart">
-                    <div class="one-forth">
+               {{-- {{ dd($item)}} --}}
+
+                <div class="row">
+                    <div class="col-4">
                         <div class="product-img" style="background-image: url(../images/{{$item->attributes->thumbnail}});">
                         </div>
-                        <div class="display-tc">
-                            <h3>{{$item->name}}</h3>
+                        <div class="display-tc cart-fonts text-center">
+                            <h6>{{$item->name}}</h3>
                         </div>
                     </div>
-                    <div class="one-eight text-center">
-                        <div class="display-tc">
+                    <div class="col-2 d-flex justify-content-center align-items-center text-center">
+                        <div class="display-tc cart-fonts">
                             <span class="price">${{$item->price}}</span>
                         </div>
                     </div>
-                    <div class="one-eight text-center">
-                        <div class="display-tc">
-                            <input type="text" id="quantity" name="quantity"
-                                class="form-control input-number text-center" value="{{$item->quantity}}" min="1" max="100">
-                        </div>
+                    <div class="col-2 d-flex justify-content-center align-items-center text-center">
+                        <div class="display-tc cart-fonts d-flex justify-content-center align-items-center">
+
+                                <span class="price">{{$item->quantity}}</span>
+
+</div>
                     </div>
-                    <div class="one-eight text-center">
-                        <div class="display-tc">
+                    <div class="col-2 d-flex justify-content-center align-items-center text-center">
+                        <div class="display-tc cart-fonts">
                             <span class="price">${{$item->price * $item->quantity}}</span>
                         </div>
                     </div>
-                    <div class="one-eight text-center">
-                        <div class="display-tc">
-                        <a href="/cart/remove/{{$item->id}}" class="closed"></a>
+                    <div class="col-2 d-flex justify-content-center align-items-center text-center">
+                        <div class="display-tc cart-fonts">
+                        <a href="/cart/remove/{{$item->id}}" ><i class="far fa-trash-alt"></i></a>
                         </div>
                     </div>
                 </div>
+                <hr>
                 @empty
                 <div class="alert alert-info">
 
@@ -123,12 +129,11 @@
                         <div class="col-md-8">
                             <form action="#">
                                 <div class="row form-group">
-                                    <div class="col-md-9">
-                                        <input type="text" name="quantity" class="form-control input-number"
-                                            placeholder="Your Coupon Number...">
+                                    <div class="col-12 text-center">
+                                        <h4>Proceed to Peyment</h4>
                                     </div>
-                                    <div class="col-md-3">
-                                        <input type="submit" value="Apply Coupon" class="btn-custom-sm">
+                                    <div class="col-12 d-flex justify-content-center align-items-center">
+                                        <a href="/checkout" class="btn-login">Pay</a>
                                     </div>
                                 </div>
                             </form>
@@ -137,11 +142,10 @@
                             <div class="total">
                                 <div class="sub">
                                 <p><span>Subtotal:</span> <span>${{$subTotal}}</span></p>
-                                    <p><span>Delivery:</span> <span>$0.00</span></p>
-                                    <p><span>Discount:</span> <span>$45.00</span></p>
+                                    <p><span>Delivery:</span> <span>$7</span></p>
                                 </div>
                                 <div class="grand-total">
-                                <p><span><strong>Total:</strong></span> <span>${{$total}}</span></p>
+                                <p><span><strong>Total:</strong></span> <span>${{($total==7)?0:$total}}</span></p>
                                 </div>
                             </div>
                         </div>

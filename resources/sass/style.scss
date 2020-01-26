@@ -3319,6 +3319,7 @@ input[type="text"] {
         top: 0;
         left: 0;
         border: 4px solid $brand-primary;
+        z-index : -1 !important;
     }
 }
 
@@ -3493,3 +3494,46 @@ textarea.form-control {
 
 
 }}
+
+
+#page > div > div > div:nth-child(2) > div > div > div.col-4 > div.product-img{
+
+
+    width : 100px !important;
+    height : 100px !important;
+    margin : .8rem auto;
+}
+
+
+.cart-fonts{
+
+
+    h6{
+        font-size : 1.3rem !important ;
+    }
+    span{
+        font-size : 1.3rem !important ;
+
+    }
+    input{
+        font-size : 1.3rem !important ;
+
+    }
+    i{
+        font-size : 1.3rem !important ;
+        cursor: pointer;
+        color : $brand-primary !important;
+    }
+}
+
+
+
+#page > div > div > div:nth-child(2) > div > div > div > div > svg > path
+{
+    color : $brand-primary !important;
+}
+
+
+.loginInput {
+    background : $brand-secondary !important;
+}

@@ -3159,6 +3159,7 @@ input[type=text] {
   top: 0;
   left: 0;
   border: 4px solid #ff004c;
+  z-index: -1 !important;
 }
 
 .btn-custom {
@@ -3310,5 +3311,37 @@ textarea.form-control {
   outline: 0;
   cursor: pointer;
   color: #ff004c !important;
+}
+
+#page > div > div > div:nth-child(2) > div > div > div.col-4 > div.product-img {
+  width: 100px !important;
+  height: 100px !important;
+  margin: 0.8rem auto;
+}
+
+.cart-fonts h6 {
+  font-size: 1.3rem !important;
+}
+
+.cart-fonts span {
+  font-size: 1.3rem !important;
+}
+
+.cart-fonts input {
+  font-size: 1.3rem !important;
+}
+
+.cart-fonts i {
+  font-size: 1.3rem !important;
+  cursor: pointer;
+  color: #ff004c !important;
+}
+
+#page > div > div > div:nth-child(2) > div > div > div > div > svg > path {
+  color: #ff004c !important;
+}
+
+.loginInput {
+  background: #a0fdfd34 !important;
 }
 

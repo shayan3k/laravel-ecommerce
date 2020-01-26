@@ -30,6 +30,20 @@ class CartController extends Controller
                 $quantity = $request->quantity;
                 $Product = Product::find($id); // assuming you have a Product model with id, name, description & price
                 $rowId = $id . '_' . Auth::id();
+
+
+                $condition = new \Darryldecode\Cart\CartCondition(array(
+                    'name' => 'Delivery',
+                    'type' => 'tax',
+                    'target' => 'total', // this condition will be applied to cart's subtotal when getSubTotal() is called.
+                    'value' => '+7',
+                    'attributes' => array( // attributes field is optional
+                        'value' => '7',
+                    )
+                ));
+
+                \Cart::session($userID)->condition($condition);
+
                 \Cart::session($userID)->add(array(
                     'id' => $rowId,
                     'name' => $Product->name,
@@ -48,59 +62,28 @@ class CartController extends Controller
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\User  $cart
+     *
      * @return \Illuminate\Http\Response
      */
     public function show()
     {
+
         $userID = Auth::id(); // the user ID to bind the cart contents
         $products = \Cart::session($userID)->getContent();
         $subTotal = \Cart::session($userID)->getSubTotal();
         $total = \Cart::session($userID)->getTotal();
-        return view('cart')->with(['products'=>$products, 'subTotal' => $subTotal , 'total'=> $total]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Cart $cart)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Cart  $cart
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Cart $cart)
-    {
-        //
+        $condition = \Cart::session($userID)->getCondition('Delivery');
+        return view('cart')->with(['products'=>$products, 'subTotal' => $subTotal , 'total'=> $total, 'condition'=>$condition]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Cart  $cart
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -115,7 +98,7 @@ class CartController extends Controller
       /**
      * Clear all Contents
      *
-     * @param  \App\Cart  $cart
+     *
      * @return \Illuminate\Http\Response
      */
     public function clear()
@@ -123,6 +106,22 @@ class CartController extends Controller
             $userID = Auth::id(); // the user ID to bind the cart contents
             \Cart::session($userID)->clear();
             return redirect()->back()->withErrors(['status'=>'success' , 'msg'=>'Cart has been cleared!']);
+    }
+
+
+    /**
+     * Clear all Contents
+     *
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function checkout()
+    {
+        $userID = Auth::id(); // the user ID to bind the cart contents
+        $subTotal = \Cart::session($userID)->getSubTotal();
+        $total = \Cart::session($userID)->getTotal();
+        $condition = \Cart::session($userID)->getCondition('Delivery');
+        return view('checkout')->with(['subTotal' => $subTotal , 'total'=> $total, 'condition'=>$condition]);
     }
 
 
